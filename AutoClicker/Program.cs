@@ -59,30 +59,34 @@ namespace AutoClicker
         {
             Console.WriteLine("Hello World!");
 
-            Point point;
-            Point pointUpdated;
-            RECT rectUpdated;
+            //Point point;
+            //Point pointUpdated;
+            //RECT rectUpdated;
             RECT firestoneRect;
-            GetCursorPos(out point);
-
-            var firestoneProcess = Process.GetProcessesByName("Firestone").FirstOrDefault();
-            var firestoneHandle = firestoneProcess.MainWindowHandle.ToInt32();
-            GetWindowRect(firestoneHandle, out firestoneRect);
+            //GetCursorPos(out point);
+            //var firestoneProcess = Process.GetProcessesByName("Firestone").FirstOrDefault();
+            //var firestoneHandle = firestoneProcess.MainWindowHandle.ToInt32();
+            //GetWindowRect(firestoneHandle, out firestoneRect);
 
             //MoveWindow((IntPtr)firestoneHandle, firestoneRect.X, firestoneRect.Y, 600, 600, true);
 
 
             while (true)
             {
-                GetCursorPos(out pointUpdated);
-                TrackMousePossition(point, pointUpdated);
+                //GetCursorPos(out pointUpdated);
+                //TrackMousePossition(point, pointUpdated);
 
-                GetWindowRect(firestoneHandle, out rectUpdated);
-                TrackFirestonePossition(firestoneRect, rectUpdated);
-
-
+                //GetWindowRect(firestoneHandle, out rectUpdated);
+                //TrackFirestonePossition(firestoneRect, rectUpdated);
 
 
+
+
+            firestoneRect = new RECT(); 
+                firestoneRect.Left = 0; 
+                firestoneRect.Top = 0;
+                firestoneRect.Right = 1920;
+                firestoneRect.Bottom= 1080;
                 var flow = new Flow();
                 flow.StartFlow(firestoneRect);
 
@@ -95,7 +99,7 @@ namespace AutoClicker
                 //var exitScreenshot = (Bitmap)System.Drawing.Image.FromFile(@"C:\Users\psych\source\repos\AutoClicker\AutoClicker\Images\ScreenShot\test7.jpg");
 
 
-                var bitmap1 = (Bitmap)System.Drawing.Image.FromFile(@"C:\Users\psych\source\repos\AutoClicker\AutoClicker\Images\ScreenShot\test2.jpg");
+                //var bitmap1 = (Bitmap)System.Drawing.Image.FromFile(@"C:\Users\psych\source\repos\AutoClicker\AutoClicker\Images\ScreenShot\test2.jpg");
 
                 //var sss = new Engine().Find(screenshot, exitScreenshot);
 
@@ -103,17 +107,14 @@ namespace AutoClicker
 
                 Thread.Sleep(5000);
             }
-
         }
-
-
 
 
 
         public static Point? ImageExists(RECT widowRect,Bitmap needleBitmap)
         {
             Screen.TakeScreenShot(widowRect);
-            using (var screenshot = (Bitmap)Image.FromFile(@"C:\Users\psych\source\repos\AutoClicker\AutoClicker\Images\ScreenShot\test.jpg"))
+            using (var screenshot = (Bitmap)Image.FromFile(@"C:\Repos\AutoClicker\AutoClicker\Images\ScreenShot\test.jpg"))
             {
                 var pointResult = new Engine().Find(screenshot, needleBitmap);
 
@@ -121,16 +122,6 @@ namespace AutoClicker
             }
 
         }
-
-
-
-
-
-
-
-
-
-
 
         static void TrackFirestonePossition(RECT firestoneRect, RECT pointUpdated)
         {

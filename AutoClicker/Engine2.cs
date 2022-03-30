@@ -157,7 +157,7 @@ namespace AutoClicker
                     using (Bitmap image = new Bitmap(array.First().Length, array.Length, stride, PixelFormat.Format1bppIndexed, new IntPtr(ptr)))
                     {
 
-                        image.Save(@"C:\Users\psych\source\repos\AutoClicker\AutoClicker\Images\ScreenShot\" + fileName + ".png");
+                        image.Save(@"C:\Repos\AutoClicker\AutoClicker\Images\ScreenShot\" + fileName + ".png");
                     }
                 }
             }

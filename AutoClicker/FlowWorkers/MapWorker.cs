@@ -11,7 +11,7 @@ namespace AutoClicker
     class MapWorker
     {
         RECT WindowRect;
-        string URL = @"C:\Users\psych\source\repos\AutoClicker\AutoClicker\Images";
+        string URL = @"C:\Repos\AutoClicker\AutoClicker\Images";
 
         public bool RunSteps(RECT windowRect)
         {
@@ -109,9 +109,9 @@ namespace AutoClicker
         public Point? ImageExists(Bitmap needleBitmap)
         {
             Screen.TakeScreenShot(WindowRect);
-            using (var screenshot = (Bitmap)Image.FromFile(URL + @"\Screenshot\Screenshot.jpg"))
+            using (var screenshot = (Bitmap)Image.FromFile(URL + @"\Screenshot\Screenshot.png"))
             {
-                var pointResult = new Engine2().Find(screenshot, needleBitmap);
+                var pointResult = new Engine3().Find(screenshot, needleBitmap);
 
                 return pointResult;
             }

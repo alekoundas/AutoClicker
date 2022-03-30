@@ -10,7 +10,7 @@ namespace AutoClicker
     class Flow
     {
         RECT WindowRect;
-        string URL = @"C:\Users\psych\source\repos\AutoClicker\AutoClicker\Images";
+        string URL = @"C:\Repos\AutoClicker\AutoClicker\Images";
 
         public void StartFlow(RECT windowRect)
         {

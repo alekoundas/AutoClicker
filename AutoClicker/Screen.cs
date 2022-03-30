@@ -41,7 +41,7 @@ namespace AutoClicker
                     graphics.CopyFromScreen(rectangle.Left, rectangle.Top, 0, 0, new Size(width, height));
                 }
 
-                bmp.Save(@"C:\Users\psych\source\repos\AutoClicker\AutoClicker\Images\Screenshot\" + filename + ".jpg", ImageFormat.Jpeg);
+                //bmp.Save(@"C:\Users\psych\source\repos\AutoClicker\AutoClicker\Images\Screenshot\" + filename + ".png", ImageFormat.png);
             }
 
             return true;
